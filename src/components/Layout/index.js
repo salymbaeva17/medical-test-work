@@ -1,22 +1,19 @@
 import React from 'react';
 import Header from "../Header";
-import Footer from "../Footer";
+import "./style.css"
+import AsideBar from "../AsideBar";
 
 const Layout = ({children}) => {
     return (
-        <>
-
+        <main className="main">
+            <AsideBar/>
+            <div className="right-side">
                 <Header/>
-                <main className="main">
-                    <aside>
-                        Hallo! Mein Name ist Aitolkun. Ich komme aus Kirgizistan, aus Bischkek.
-                    </aside>
-                    <div className="container">{children}</div>
-                </main>
-                <Footer/>
-
-
-        </>
+                <div className="container">
+                    {children}
+                </div>
+            </div>
+        </main>
     );
 };
 
