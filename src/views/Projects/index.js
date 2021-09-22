@@ -9,6 +9,7 @@ const Projects = () => {
     const [gallery, setGallery] = useState([])
     const [showModal, setIsModal] = useState(false)
     const [image, setImage] = useState({})
+    const [className, setClassName] = useState("row")
     const {reset} = useForm()
 
     const onSubmit = (data) => {
@@ -16,8 +17,9 @@ const Projects = () => {
         axios.post(`https://613ae97d110e000017a453d0.mockapi.io/projects`, data)
             .then(({data}) => {
                 setGallery([...gallery, data])
-                setIsModal(false)
                 reset()
+                setIsModal(false)
+
             })
     }
     const handleChange = (e) => {
@@ -34,11 +36,20 @@ const Projects = () => {
 
     return (
         <>
-            <button onClick={() => setIsModal(true)}
-                    className='btn btn-primary mt-3 ms-auto d-block'>
-                Добавить проект
-            </button>
-            <div className="row mt-5">
+            <div className="d-flex justify-content-between align-items-center  mt-5">
+                <p className="project-list">Список проектов</p>
+                <button onClick={() => setIsModal(true)}
+                        className='btn btn-add'>
+                    Добавить проект
+                </button>
+            </div>
+            <div className="d-flex align-items-center mt-4">
+                <button onClick={() => setClassName("row")} className="ms-auto d-flex justify-content-center align-items-center btn">
+                    <i className='bx bxs-grid-alt' style={{margin: "0", color: "#b00fc3", fontSize: "24px", border: "none"}}/></button>
+                <button onClick={() => setClassName("d-block")} className="d-flex justify-content-center align-items-center ms-1 btn">
+                    <i className='bx bx-list-ul' style={{margin: "0", color: "#b00fc3", fontSize: "30px", border: "none"}}/></button>
+            </div>
+            <div className={`mt-5 ${className}`}>
                 {
                     gallery.map(el =>
                         <ProjectCard key={el.id} el={el}/>
