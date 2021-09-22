@@ -10,3 +10,7 @@ img{
 body{
     font-family: 'Roboto', sans-serif;
 }
+p{
+    margin: 0;
+    padding: 0;
+}
