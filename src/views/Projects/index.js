@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Layout from "../../components/Layout";
 import ProjectCard from "../../components/ProjectCard";
 import ModalProject from "../../components/Modal";
 import axios from "axios";
