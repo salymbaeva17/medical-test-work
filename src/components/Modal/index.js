@@ -40,7 +40,7 @@ const ModalProject = ({show, setIsModal, onSubmit, handleChange}) => {
                                {...register("author", {required: true})}/>
                         <input className="form-control mb-3" type="text" placeholder="Компания..."
                                {...register("company", {required: true})}/>
-                        <button className="ms-auto d-block btn btn-primary">Добавить</button>
+                        <button className="ms-auto d-block btn btn-add">Добавить</button>
                     </div>
                 </form>
             </div>
