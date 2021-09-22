@@ -1,8 +1,41 @@
 
 .project-card{
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.64);
+    box-shadow: 0 0 10px -4px rgba(0, 0, 0, 0.64);
+    border-radius: 8px 5px;
+    overflow: hidden;
 }
 .project-info{
     padding: 10px 15px;
-
+}
+.project-card img{
+    height: 170px;
+    object-fit: cover;
+}
+.project-title{
+    font-size: 22px;
+    text-transform: capitalize;
+}
+.project-date{
+    margin-bottom: 5px;
+    color: #989898;
+}
+.bx{
+    margin-right: 5px;
+}
+.project-card span, p{
+    color: #989898;
+    font-size: 15px;
+}
+.project-author{
+    margin-bottom: 3px;
+    text-transform: capitalize;
+}
+.project-company{
+    text-transform: capitalize;
+}
+.project-list{
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 23px;
+    color: #727272;
 }
